@@ -1,0 +1,1182 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Para evitar rolagem horizontal */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    --verde-escuro: #1f5836; 
+    --verde-menta: #B2E7C8;
+    --verde-palido: #C4E3CB;
+    --verde-cha: #D7EBD9;
+    --branco-suave: #F1F8F5;
+    --degrade-btn: linear-gradient(#1f5836, #B2E7C8);
+}
+
+.background-verde{
+    background: var(--verde-escuro);
+}
+
+/*classes reutilizaveis*/
+.container{
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+.btn-gradiente{
+    padding: 10px 20px;
+    color: #C4E3CB;
+    border: none;
+    cursor: pointer;
+    background-image: var(--degrade-btn);
+
+}
+
+/*classes do site*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0;
+    
+}
+.logo a{
+    font-size: 30px;
+    font-weight: normal;
+    color: white;
+    white-space: nowrap;  /*deixar a frase corrida e sem quebra de linha*/
+    text-decoration: none; /* Remover a linha abaixo da frase */
+}
+.ul{
+    display: flex;
+    align-items: center;
+}
+.ul li{
+    margin: 0 35px;
+    font-size: 15px;
+}
+ul li a{
+    color: white;
+}
+/*img*/
+.main-img img{
+    max-width: 100%;   /*faz com q a img não exceda da tela*/
+    max-height: 80vh;  /*ajusta a altura maxima da img*/
+    width: auto;  /*mantem a proporção original da img*/
+    height: auto; /*mantem a proporção original da img*/
+    border: 1px solid #ddd; /*visibilidade e contraste da img*/
+    padding: 10px;
+    background-color: #fff;
+}
+/* main */
+main .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.main-text{
+    width: 50%;
+    color: #B2E7C8;
+}
+.main-text h1{
+    font-size: 4.5rem;     /*aumentar o tamanho do texto*/
+}
+
+.main-text div{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/*menu icon*/
+.menu-icon{
+    display: none;
+    position: relative
+
+}
+
+
+/*responsivo*/
+@media(max-width: 960px){
+    .menu-icon{
+        display: block;
+    }
+    .ul{
+        position: fixed;
+        background: red;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 100%;
+        transition: 0.3s;
+    }
+    .ul.ativo{
+        left: 0;
+    }
+}
+
+        /*barra de pesquisa*/
+.search-container {
+    display: flex;
+    justify-content: left;
+    margin-top: 10px;
+}
+
+#search-bar {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #42946b;
+    border-radius: 4px 0 0 4px;
+    width: 300px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #233800;
+    border-left: none;
+    background-color: #ccf187;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+button:hover {
+    background-color: #88ad02;
+}
+
+#results {
+    margin-top: 20px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* Barra Lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+.sidebar h2 {
+    color: #9af509;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category-list li {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.category-list li a {
+    color: #347059;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.category-list li a:hover {
+    background-color: #9bcfa2;
+}
+
+/* Ajuste de margem para o conteúdo principal */
+.container {
+    margin-left: 220px; /* Espaço para a barra lateral */
+}
+
+/* Barra Lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+.sidebar h2 {
+    color: #81f032;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category-list li {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.category-list li a {
+    color: #b2e997;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.category-list li a:hover {
+    background-color: #448b50;
+}
+
+/* Ajuste de margem para o conteúdo principal */
+.container {
+    margin-left: 220px; /* Espaço para a barra lateral */
+}
+
+/* Estilo dos Produtos */
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product {
+    background-color: #3eb497a4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(106, 250, 130, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 14px;
+    color: #4b5746a2;
+}
+
+.product .price {
+    font-size: 16px;
+    color: #4b5746;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Estilo da Barra de Navegação */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #4CAF50; /* Altere para a cor de fundo desejada */
+    color: #fff; /* Altere para a cor do texto desejada */
+    border-radius: 5px;
+}
+
+/* Estilo do Rodapé */
+footer.footer {
+    background-color:#1f5836 (17, 141, 24, 0.39); 
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer .footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer .footer-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer .footer-section p {
+    margin: 5px 0;
+}
+
+.footer .footer-section a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.footer .footer-section a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.footer .footer-section a img:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo do Carrinho de Compras */
+.cart {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cart h2 {
+    margin-bottom: 20px;
+}
+
+.cart #cart-items {
+    margin-bottom: 20px;
+}
+
+.cart .btn-gradiente {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para Produtos em Destaque */
+.featured-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0; /* Espaçamento para separar do banner */
+    background-color: #f8f8f8; /* Cor de fundo para destacar a seção */
+}
+
+.featured-products .container {
+    max-width: 1200px; /* Largura máxima para o conteúdo */
+}
+
+.featured-products h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaçamento entre os produtos */
+}
+
+.product {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px; /* Largura fixa para cada produto */
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação suave */
+}
+
+.product:hover {
+    transform: translateY(-5px); /* Eleva levemente o produto ao passar o mouse */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 16px;
+    color: #666;
+}
+
+.product .price {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/* Estilo para o rodapé */
+footer.footer {
+    background-color: #1f5836; /* Cor de fundo do rodapé */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+    text-align: left; /* Alinhamento à esquerda para melhor legibilidade */
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-section a img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section form input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footer-section form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a0db8e;
+    color: #004d00;
+    cursor: pointer;
+}
+
+.footer-section form button:hover {
+    background-color: #91c47b;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #91c47b;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom a {
+    color: #a0db8e;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo específico para a seção de contato */
+.footer-section.contato a,
+.footer-section.contato p {
+    display: block; /* Exibe os elementos em blocos */
+    margin: 5px 0; /* Espaçamento entre os itens */
+}
+
+
+
+/* Estilos para a barra de navegação principal */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50; /* Cor da barra principal */
+    padding: 10px;
+}
+
+.main-nav .ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    justify-content: space-around; /* Ajusta a distribuição dos itens */
+}
+
+.main-nav .ul li {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav .ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-nav .search-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto; /* Centraliza a barra de pesquisa */
+}
+
+.main-nav .search-container input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+.main-nav .search-container button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #4CAF50;
+    cursor: pointer;
+}
+
+/* Estilos para a seção de produtos em destaque */
+.featured-products {
+    padding: 40px 0; /* Espaçamento acima e abaixo da seção */
+    text-align: center; /* Centraliza o texto */
+    background-color: #861111; /* Cor de fundo da seção (mude conforme necessário) */
+}
+
+.section-title {
+    font-size: 2.5em; /* Tamanho da fonte do título */
+    color: #c3ff9c; /* Cor do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilos para a seção de produtos em destaque */
+.featured-products {
+    padding: 40px 0; /* Espaçamento acima e abaixo da seção */
+    text-align: center; /* Centraliza o texto */
+    background-color: #1f5836; /* Cor de fundo da seção (mude conforme necessário) */
+}
+
+.section-title {
+    font-size: 2.5em; /* Tamanho da fonte do título */
+    color: #87d385; /* Cor do título */
+    margin-bottom: 20px; /* Espaço abaixo do título */
+    font-weight: bold; /* Negrito */
+}
+
+
+/* Estilos gerais do banner */
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+}
+
+/* Banner */
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Define a altura do banner para 100% da altura da viewport */
+    width: 100vw; /* Define a largura do banner para 100% da largura da viewport */
+    background-color: #1f5836; /* Cor de fundo do banner (opcional) */
+    overflow: hidden; /* Para esconder partes da imagem que ultrapassem o tamanho do banner */
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.banner-content {
+    text-align: center; /* Centraliza o conteúdo dentro do banner */
+    position: relative; /* Permite posicionar a imagem dentro do banner */
+    width: 90%; /* Garante que a imagem ocupe toda a largura do container */
+    height: 90%; /* Garante que a imagem ocupe toda a altura do container */
+}
+
+.banner-img {
+    width: 100%; /* Garante que a imagem ocupe toda a largura do container */
+    height: 100%; /* Garante que a imagem ocupe toda a altura do container */
+    object-fit: cover; /* Ajusta a imagem para cobrir todo o container */
+}
+
+.banner-content:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do banner em 5% ao passar o mouse */
+    opacity: 0.9; /* Reduz a opacidade ligeiramente ao passar o mouse */
+}
+
+
+
+/*Pagina Sobre*/
+/* Reset de estilos para garantir consistência em todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos básicos para o corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte para todo o documento */
+    background-color: #004d00;/* Cor de fundo do corpo da página */
+    color: #000000; /* Cor do texto principal */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+}
+
+/* Container principal para centralizar conteúdo e limitar largura */
+.container {
+    width: 90%;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    max-width: 1200px; /* Largura máxima para o conteúdo */
+}
+
+/* Estilos para o cabeçalho */
+.background-verde {
+    background-color: #022b04; /* Cor de fundo verde */
+    padding: 20px 0; /* Espaçamento interno superior e inferior */
+}
+
+header {
+    background-color: #022b04; /* Cor de fundo do cabeçalho */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    padding: 10px 0; /* Espaçamento interno superior e inferior */
+}
+
+/* Estilos para o logo */
+.logo {
+    font-size: 1.5rem; /* Tamanho da fonte do logo */
+    font-weight: bold; /* Texto em negrito */
+}
+
+.logo a {
+    text-decoration: none; /* Remove decoração de link */
+    color: #d5ecb6; /* Cor do texto do logo */
+}
+
+.logo a:hover {
+    color: #4CAF50; /* Cor do texto do logo ao passar o mouse */
+}
+
+/* Estilos para o menu de navegação */
+.ul {
+    list-style-type: none; /* Remove marcadores de lista */
+    float: right; /* Alinha o menu à direita */
+}
+
+.ul li {
+    display: inline-block; /* Exibe itens de menu em linha */
+    margin-left: 20px; /* Espaçamento entre os itens do menu */
+}
+
+.ul li a {
+    text-decoration: none; /* Remove decoração de link */
+    color: #d5ecb6; /* Cor do texto do link */
+}
+
+.ul li a:hover {
+    color: #4CAF50; /* Cor do texto do link ao passar o mouse */
+}
+
+/* Estilos para o conteúdo principal */
+.main-content {
+    background-color: #2a7047; /* Cor de fundo do conteúdo principal */
+    padding: 20px; /* Espaçamento interno */
+    margin: 20px 0; /* Margem superior e inferior */
+}
+
+/* Estilos para a seção "Sobre Nós" */
+.about-section {
+    margin-bottom: 40px; /* Margem inferior */
+}
+
+.about-section h2 {
+    color: #77a978; /* Cor do título */
+    border-bottom: 2px solid #9eb59f; /* Linha decorativa inferior */
+    padding-bottom: 5px; /* Espaçamento abaixo do título */
+}
+
+.about-section p {
+    margin-bottom: 15px; /* Margem inferior */
+}
+
+.about-section ul {
+    margin-left: 20px; /* Recuo para listas não ordenadas */
+}
+
+.about-section ul li {
+    margin-bottom: 10px; /* Margem inferior para itens da lista */
+}
+
+/* Estilos para a seção "Nossa Equipe" */
+.team-section {
+    margin-bottom: 40px; /* Margem inferior */
+}
+
+.team-section h2 {
+    color: #4CAF50; /* Cor do título */
+    border-bottom: 2px solid #4CAF50; /* Linha decorativa inferior */
+    padding-bottom: 5px; /* Espaçamento abaixo do título */
+    margin-bottom: 20px; /* Margem inferior */
+}
+
+.team-members {
+    display: flex; /* Layout em flexbox para os membros da equipe */
+    justify-content: space-around; /* Distribui uniformemente os membros */
+}
+
+.team-member {
+    text-align: center; /* Centraliza o texto dos membros */
+}
+
+.team-member img {
+    width: 150px; /* Largura da imagem */
+    height: 150px; /* Altura da imagem */
+    border-radius: 50%; /* Borda arredondada para imagem de perfil */
+    margin-bottom: 10px; /* Margem inferior */
+}
+
+.team-member h3 {
+    font-size: 1.2rem; /* Tamanho da fonte do nome */
+    margin-bottom: 5px; /* Margem inferior */
+}
+
+.team-member p {
+    font-style: italic; /* Texto em itálico */
+    color: #d5ecb6; /* Cor do texto secundário */
+    margin-bottom: 15px; /* Margem inferior */
+}
+
+/* Estilos para o rodapé */
+.footer {
+    background-color: #333; /* Cor de fundo do rodapé */
+    color: #d5ecb6;/* Cor do texto */
+    padding: 30px 0; /* Espaçamento interno superior e inferior */
+}
+
+.footer-section {
+    margin-bottom: 20px; /* Margem inferior */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.footer-section h3 {
+    color: #4CAF50; /* Cor do título */
+    margin-bottom: 10px; /* Margem inferior */
+}
+
+.footer-section a {
+    text-decoration: none; /* Remove decoração de link */
+    color: #fff; /* Cor do texto do link */
+    margin-right: 10px; /* Margem direita */
+}
+
+.footer-section a:hover {
+    color: #4CAF50; /* Cor do texto do link ao passar o mouse */
+}
+
+.footer-section form {
+    margin-top: 20px; /* Margem superior */
+    display: flex; /* Layout em flexbox para o formulário */
+    justify-content: center; /* Centraliza o conteúdo */
+}
+
+.footer-section input[type="email"] {
+    padding: 10px; /* Espaçamento interno */
+    width: 250px; /* Largura do campo de email */
+    margin-right: 10px; /* Margem direita */
+    border: none; /* Remove borda */
+    border-radius: 5px 0 0 5px; /* Borda arredondada */
+}
+
+.footer-section button[type="submit"] {
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #4CAF50; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remove borda */
+    border-radius: 0 5px 5px 0; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar o mouse */
+}
+
+.footer-section button[type="submit"]:hover {
+    background-color: #45a049; /* Cor de fundo do botão ao passar o mouse */
+}
+
+.footer-bottom {
+    background-color: #222; /* Cor de fundo da parte inferior do rodapé */
+    text-align: center; /* Centraliza o conteúdo */
+    padding: 10px 0; /* Espaçamento interno superior e inferior */
+}
+
+.footer-bottom p {
+    margin-bottom: 5px; /* Margem inferior */
+}
+
+/* Estilos para responsividade */
+@media (max-width: 768px) {
+    .ul {
+        display: none; /* Esconde o menu principal em telas menores */
+        position: fixed; /* Fixa a posição do menu */
+        top: 80px; /* Distância do topo */
+        right: 0; /* Alinha à direita */
+        width: 100%; /* Largura total */
+        background-color: #083e09; /* Cor de fundo do menu */
+        text-align: center; /* Centraliza o conteúdo */
+        z-index: 1000; /* Z-index para sobrepor outros elementos */
+    }
+
+    .ul.ativo {
+        display: block; /* Mostra o menu quando ativo */
+    }
+
+    .ul li {
+        display: block; /* Exibe itens de menu em bloco */
+        margin: 10px 0; /* Espaçamento vertical entre os itens */
+    }
+
+    .footer-section form {
+        flex-direction: column; /* Layout em coluna para o formulário */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+
+    .footer-section input[type="email"] {
+        margin-right: 0; /* Remove margem direita */
+        margin-bottom: 10px; /* Margem inferior */
+        width: 100%; /* Largura total */
+        border-radius: 5px; /* Borda arredondada */
+    }
+
+    .footer-section button[type="submit"] {
+        width: 100%; /* Largura total */
+        border-radius: 5px; /* Borda arredondada */
+    }
+}
+
+
+/*estilo da pagina de contato*/
+
+/* Estilos específicos para o formulário */
+.formulario {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #235516;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(94, 102, 93, 0.1);
+}
+
+.formulario h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #4acf60;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #2dd39b;
+    color: #05471bb9;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.contato {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.contato h2 {
+    font-size: 2rem; /* Tamanho do texto */
+    color: #44830ade; /* Cor do texto */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    text-transform: uppercase; /* Transforma o texto para maiúsculas */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+.background-contato {
+    background-color: #31bd62; /* Cor de fundo desejada */
+    padding: 20px; /* Adicione padding conforme necessário */
+}
+
+.section {
+    padding: 50px 0;
+    background-color: #1f5836; 
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+#contatoForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #96f08a;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(172, 11, 11, 0.1);
+}
+
+#contatoForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#contatoForm input[type="text"],
+#contatoForm input[type="email"],
+#contatoForm textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #6d0202;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contatoForm textarea {
+    height: 150px;
+}
+
+#contatoForm button[type="submit"] {
+    background-color: #4CAF50;
+    color: rgb(211, 252, 145);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#contatoForm button[type="submit"]:hover {
+    background-color: #15851b;
+}
+
+@media screen and (max-width: 768px) {
+    #contatoForm {
+        padding: 15px;
+    }
+
+    #contatoForm textarea {
+        height: 100px;
+    }
+}
+
+ul {
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px; /* Espaçamento entre os itens da lista */
+    line-height: 1.6; /* Define a altura da linha para melhor legibilidade */
+}
+
+ul li strong {
+    display: block; /* Faz o texto do strong ocupar a linha completa */
+    margin-bottom: 5px; /* Espaço entre o strong e o texto */
+}
+
+/*aba de detalhe*/
+
+/* Container da Seção */
+.section {
+    padding: 40px 0;
+    background-color: #acf0bc;
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo do Título da Seção */
+.section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Container dos Produtos */
+.produtos {
+    display: flex;
+    justify-content: center; /* Centraliza os produtos horizontalmente */
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Estilo Individual dos Produtos */
+.produto {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 260px; /* Define uma largura fixa para os produtos */
+    height: 400px; /* Define uma altura fixa para os produtos */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border 0.3s;
+}
+
+/* Estilo das Imagens dos Produtos */
+.produto img {
+    width: 100%; /* Largura da imagem ajustada ao container */
+    height: auto; /* Altura automática para manter a proporção */
+    max-height: 150px; /* Altura máxima para as imagens */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+/* Estilo dos Títulos dos Produtos */
+.produto h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Estilo das Descrições dos Produtos */
+.produto p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* Estilo dos Preços dos Produtos */
+.produto .price {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Estilo do Link de Detalhes */
+.produto a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.produto a:hover {
+    color: #2E7D32;
+}
+
+/* Estilo da Avaliação dos Produtos */
+.rating {
+    margin-top: 10px;
+}
+
+.rating .fas {
+    color: #FFD700;
+}
+
+/* Animação ao Passar o Mouse sobre o Produto */
+.produto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(106, 250, 130, 0.4);
+    background-color: #a0d6b4;
+    border: 2px solid #4CAF50;
+}
+
+/* Animação ao Passar o Mouse sobre a Imagem do Produto */
+.produto img:hover {
+    transform: scale(1.2);
+}
+
+/* Ocultar o contêiner de detalhes do produto por padrão */
+.hidden {
+    display: none;
+}
